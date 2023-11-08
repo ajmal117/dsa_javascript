@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array sorting</title>
+    <script>
+      let data = [40, 30, 12, 25];
+
+      //this code show increasing order becouse consicutive index swap when 1st(previous) index value more than 2nd(exceed) index value
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+          if (data[j] > data[j + 1]) {
+            let temp = data[j]; //it will save when the data will overlap for 3rd step
+            data[j] = data[j + 1];
+            data[j + 1] = temp; //3rd step
+          }
+        }
+      }
+      console.warn(data);
+
+      let dataM = [40, 30, 12, 25, 34, 22, 5, 80, 12223, 45, 2, 25];
+      //this code show decreasing order becouse consicutive index swap when 1st(previous) index value less than 2nd(exceed) index value
+      for (let i = 0; i < dataM.length; i++) {
+        for (let j = 0; j < dataM.length; j++) {
+          console.log(2); //it show no. of total loop
+          if (dataM[j] < dataM[j + 1]) {
+            let temp = dataM[j]; //it will save when the dataM will overlap for 3rd step
+            dataM[j] = dataM[j + 1];
+            dataM[j + 1] = temp; //3rd step
+          }
+        }
+      }
+      console.warn(dataM);
+    </script>
+  </head>
+  <body></body>
+</html>

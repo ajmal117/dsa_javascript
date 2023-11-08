@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>merging</title>
+    <script>
+      // merge two array by two for loop -> not are nested loop
+      let data = [23, 2, 23, 54, 12];
+      let data2 = [34, 33, 12, 90];
+      let data3 = [];
+
+      for (let i = 0; i < data.length; i++) {
+        data3[i] = data[i];
+      }
+
+      for (let i = 0; i < data2.length; i++) {
+        data3[data.length + i] = data2[i];
+      }
+
+      console.log(data3);
+
+      //   default function to merger
+      // 1- concat
+      // 2- ...set
+
+      let d1 = [1, 2, 3];
+      let d2 = [2, 4, 2];
+      let d3 = [];
+      //   d3 = [...d1, ...d2];
+      d3 = d1.concat(d2);
+      console.log(d3);
+    </script>
+  </head>
+  <body>
+    <h3>
+      time complexity = total lines of code of program = 18
+      <br />
+      space complexity = how many variable we have take = 4
+    </h3>
+    <h4>
+      lines of code = 9
+      <br />
+      lines of loop = 9 <br />
+      total line = 9 + 9 =18
+      <br />
+      better program = which program have less no of lines of code
+    </h4>
+  </body>
+</html>

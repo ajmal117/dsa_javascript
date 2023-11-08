@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let data = {
+            name: 'ajmal',
+            age: 28,
+            mail: "ajmal@test.com",
+            getName: function () {
+                return this.name
+            }
+        }
+        // console.warn(data);
+        // add key 
+        data.contact = 12345;
+        // console.warn(data);
+
+        console.warn(data.getName());
+
+        // delete entity
+        delete data.name
+
+        //over write
+        data.name = 'ali'
+        console.warn(data);
+
+        // if there are many object then we can stored them in a object 
+
+        console.log(Object.keys(data));
+        console.log(Object.values(data));
+
+        //if we need key value pair in a single array
+        console.warn(Object.entries(data))
+
+        //loop on object
+
+        for (x in data) {
+            // console.warn(x)
+            console.warn(data[x])
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Object in ds in js</h1>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSERT ELEMENT IN ARRAY WITHOUT DELETE AN ELEMENT</title>
+
+  <script>
+    let data = [23, 3, 4, 23, 53, 12, 42];
+    let newElem = 90;
+    let position = 2;
+    for (let i = data.length - 1; i >= 0; i--) {
+      // document.write(data[i]);
+      if (i >= position) {
+        data[i + 1] = data[i];
+        if (i == position) {
+          data[i] = newElem;
+        }
+      }
+      console.warn(data[i]);
+    }
+    console.warn(data);
+
+    // // document.write(`${data} </br>`);
+    // console.log(data);
+
+    // let insertElem = () => {
+    //   let data = [3, 2, 1, 4, 9, 23, 46];
+    //   let position = document.getElementById("position").value;
+    //   let elemVal = document.getElementById("valElem").value;
+
+    //   for (let i = data.length - 1; i >= 0; i--) {
+    //     if (i >= position) {
+    //       data[i + 1] = data[i];
+    //       if (i == position) {
+    //         data[i] = elemVal;
+    //       }
+    //     }
+    //   }
+    //   console.log(data);
+    // };
+  </script>
+</head>
+
+<body>
+  <input type="text" id="position" placeholder="insert a position" />
+  <input type="text" id="valElem" placeholder="insert a element value" />
+  <button onclick="insertElem()">Insert</button>
+</body>
+
+</html>

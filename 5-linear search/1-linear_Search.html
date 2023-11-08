@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   let data = [23, 34, 90, 2, 76, 5, 13, 22];
+      //   let find = 5;
+      //   let index = undefined;
+
+      //   for (let i = 0; i <= data.length; i++) {
+      //     if (data[i] == find) {
+      //       index = i;
+      //       break;
+      //     }
+      //   }
+      //   console.warn(index);
+      //   if (!index) {
+      //     alert("element not found");
+      //   } else {
+      //     alert("element is on position " + index);
+      //   }
+
+      function findEl() {
+        let data = [23, 34, 90, 2, 76, 5, 13, 22];
+        let find = document.getElementById("num").value;
+        let index = undefined;
+
+        for (let i = 0; i <= data.length; i++) {
+          if (data[i] == find) {
+            index = i;
+            break;
+          }
+        }
+        console.warn(index);
+        if (!index) {
+          alert("element not found");
+        } else {
+          alert("element is on position " + index);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" name="" id="num" />
+    <button onclick="findEl()">Search Element</button>
+  </body>
+</html>

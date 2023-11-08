@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion</title>
+
+    <script>
+      //note -recursion work with a condition to overcome tha max call stack size (infinity lopp)
+
+      //   function apple(x) {
+      //     console.warn(x);
+      //     if (x < 10) {
+      //       apple(x + 1);
+      //     }
+      //   }
+      //   let data = 0;
+      //   apple(data);
+
+      // q1 - find a factorial without any loop?
+      function factorial(value) {
+        if (value == 0) {
+          return 1;
+        }
+        return value * factorial(value - 1);
+      }
+      let data = 5;
+      console.log(factorial(data));
+    
+      // q2 - 1 se 100 sum 
+      // function factorial(value) {
+      //   if (value == 0) {
+      //     return 0;
+      //   }
+      //   return value + factorial(value - 1);
+      // }
+      // let data = 100;
+      // console.log(factorial(data));
+
+       
+      //while loop(extra topic)
+      let eData = ["bat ", "ant", "spidy", "ironmaon", "superman"];
+      let i = 0;
+      while(i<eData.length){
+        console.log(eData[i])
+        i++;
+      }
+      
+    </script>
+  </head>
+  <body></body>
+</html>

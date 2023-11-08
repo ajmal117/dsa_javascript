@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stack</title>
+    <script>
+      let data = [];
+      let currentLength = data.length;
+
+      function push() {
+        // for maximum 5 stack value
+        let newElem = document.getElementById("newelem").value;
+        if (currentLength >= 5) {
+          alert(`stack is full , last value : ${newElem}`);
+        }
+        data[currentLength] = newElem;
+        currentLength += 1;
+        document.getElementById("newelem").value = "";
+        console.warn(data);
+      }
+
+      let pop = () => {
+        if (currentLength == 0) {
+          alert("stack already empty");
+        } else {
+          console.warn(" value deleted: ", data[currentLength - 1]);
+          currentLength -= 1;
+          data.length = currentLength;
+        }
+      };
+
+      let display = () => {
+        for (let i = 0; i < currentLength; i++) {
+          let value = data[i];
+          console.log("stack position is  ", i, "and value", value);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" id="newelem" placeholder="enter a value" />
+    <button onclick="push()">Add a new value in the stack</button>
+    <br />
+    <button onclick="pop()">delete one value by pop</button>
+    <br />
+    <button onclick="display()">display all element</button>
+  </body>
+</html>

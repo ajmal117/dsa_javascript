@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>string palindrome</title>
+    <script>
+        function palindrome(str) {
+            let start = 0;
+            let end = str.length - 1;
+            let result = true;
+
+            while (start < end) {
+                if (str[start] !== str[end]) {
+                    result = false;
+                }
+                start++
+                end--
+            }
+            return result;
+        }
+        // let str = 'aka';
+        // let str = 'level';
+        let str = 'hello';
+        console.log(str[0])
+        console.warn(palindrome(str))
+    </script>
+</head>
+
+<body>
+    <h4>
+        q1- what is palindrome?<br>
+        A- a string is a palindrome if it is readable from last same as from the starting .
+        example - level, aka, nitin <br>
+
+        2- understanding of palindrome on board <br>
+        3-check with program <br>
+        4- change string to verify <br>
+
+    </h4>
+
+</body>
+
+</html>

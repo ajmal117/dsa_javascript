@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>search</title>
+  <script>
+    // let data = [23, 34, 23, 22, 43, 10, 20, 50];
+    // let item = 43;
+    // let index = null;
+    // for (let i = 0; i <= data.length - 1; i++) {
+    //   if (data[i] === parseInt(item)) {
+    //     index = i;
+    //       break;
+    //   }
+    // }
+    // console.warn(index);
+
+    //if there is two or more than two items are same;
+
+    let searchFun = () => {
+      let data = [23, 34, 23, 22, 43, 10, 20, 50, 23];
+      let item = document.getElementById("search").value;
+      let index = [];
+      for (let i = 0; i <= data.length - 1; i++) {
+        if (data[i] === parseInt(item)) {
+          index = index + i + `${","}`;
+        }
+
+      }
+      // console.warn(typeof(index)) ;
+      console.warn(index);
+    };
+  </script>
+</head>
+
+<body>
+  <input type="text" id="search" placeholder="put item value" />
+  <button onclick="searchFun()">find all index of item</button>
+</body>
+
+</html>

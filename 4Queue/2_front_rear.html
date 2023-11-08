@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>front and rear in queue</title>
+    <script>
+      let queue = [];
+      let currentSize = queue.length;
+      let maxSize = 5;
+
+      function enqueue() {
+        let newVal = document.getElementById("newV").value;
+        if (currentSize >= maxSize) {
+          alert("queue is already full");
+        } else {
+          queue[currentSize] = newVal;
+          currentSize++;
+        }
+        document.getElementById("newV").value = "";
+      }
+
+      function dequeue() {
+        if (!isEmpty()) {
+          for (let i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+          }
+          currentSize -= 1;
+          queue.length = currentSize;
+        } else {
+          alert("queue is empty");
+        }
+      }
+
+      function display() {
+        console.warn(queue);
+      }
+
+      let front = () => {
+        if (!isEmpty()) {
+          console.warn(queue[0]);
+        } else {
+          console.warn();
+          alert("queue is empty");
+        }
+      };
+
+      let rear = () => {
+        if (currentSize > 0) {
+          console.warn(queue[currentSize - 1]);
+        } else {
+          console.warn("Queue is empty");
+        }
+      };
+
+
+      function isEmpty() {
+        if (currentSize <= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <input type="text" name="" id="newV" />
+    <button onclick="enqueue()">Add a value</button>
+    <button onclick="dequeue()">Remove a value</button>
+    <button onclick="display()">display queue</button>
+    <button onclick="front()">front a value</button>
+    <button onclick="rear()">rear a value</button>
+  </body>
+</html>

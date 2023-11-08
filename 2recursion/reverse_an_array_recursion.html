@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // reverse data elements of an array
+        // let data = [3,5,7,0];
+        let data = [3, 5, 7, 19, 23, 14, 76];
+        
+        function test(data, start, end) {
+            let temp;
+            console.warn(data);
+            if (start <= end) {
+                temp = data[start];
+                data[start] = data[end];
+                data[end] = temp;
+                test(data, start + 1, end - 1);
+            }
+        }
+        //    test (data,starting,ending)
+        test(data, 0, data.length - 1);
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        reverse_an_array_By_recursion
+    </h1>
+</body>
+
+</html

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check string are anagram</title>
+    <script>
+        function stringAnagram(str1, str2) {
+            let objStr1 = {};
+            if (str1.length !== str2.length) {
+                return false;
+            }
+            for (ch of str1) {
+                // console.log(ch);
+                //to make keys of elements
+                objStr1[ch] = (objStr1[ch] || 0) + 1
+            }
+            // console.log(objStr1)
+            for (ch of str2) {
+                // console.warn(ch);
+                if (!objStr1[ch]) {
+                    return false
+                }
+                // console.warn(objStr1[ch]);
+                objStr1[ch]--
+            }
+            return true;
+
+        }
+        
+        console.warn(stringAnagram("hello", "elloh"));
+        // console.warn(stringAnagram("ajmal", "elloh"));
+        // console.warn(stringAnagram("hell", "elloh"));
+        // console.warn(stringAnagram("llohe", "elloh"));
+
+
+    </script>
+</head>
+
+<body>
+    <h1>check string are anagram</h1>
+</body>
+
+</html>

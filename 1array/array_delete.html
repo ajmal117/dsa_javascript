@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARRAY delete</title>
+    <script>
+        let data = [23, 34, 22, 12, 10, 5, 38];
+        let position = 2;
+        for (let i = position; i < data.length - 1; i++) {
+          data[i] = data[i + 1];
+        }
+        data.length = data.length - 1;
+        console.warn(data);
+
+      // function removeVal() {
+      //   let data = [23, 34, 22, 12, 10, 5, 38];
+      //   let position = document.getElementById("inputVal").value;
+      //   position = parseInt(position);
+      //   for (let i = position; i < data.length - 1; i++) {
+      //     data[i] = data[i + 1];
+      //   }
+      //   data.length = data.length - 1;
+      //   console.warn(data);
+      // }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="inputVal" placeholder="position value" />
+    <button onclick="removeVal()">Remove Value</button>
+  </body>
+</html>

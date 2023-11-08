@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set</title>
+    <script>
+        let data = new Set(['ajmal', 'green', 'red', 'ajmal']);
+        data.add("nitin")
+        console.warn(data.has('nitin'))
+        data.add({ 'email': 'test@test.com' })
+
+        console.warn(data)
+        data.delete('ajmal')
+        console.warn(data)
+
+        // Loop
+        for (let x of data) {
+            console.warn(x)
+        }
+
+        data.forEach((val) => {
+            console.warn(val)
+        })
+        console.warn('keys', 'value', 'entries');
+
+        console.warn(data.keys());
+        console.warn(data.values())
+        console.warn(data.entries())
+    </script>
+</head>
+
+<body>
+
+    <h1>
+        set intro
+    </h1>
+</body>
+
+</html>

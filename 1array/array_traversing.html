@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dsa js</title>
+    <script>
+      // traversing elements pf an array
+      let data = [22, 32, 3, 12, 25, 74, 25, 8, 3, 8, 0];
+      for (let i = 0; i < data.length; i++) {
+        document.write(`array ${i} is ${data[i]} <br> `);
+      }
+
+      let x = 10;
+      document.write(data[x]);
+      // let el = [22, 32, 3, 12, 25, 74, 25, 8, 3, 8, 0];
+      // const getNumb = () => {
+      //   let input_val = document.getElementById("element").value;
+      //   if (input_val < el.length && typeof parseInt(input_val) === "number") {
+      //     alert(el[Math.abs(input_val)]);
+      //   } else {
+      //     alert("please enter a valid number");
+      //   }
+      // };
+    </script>
+  </head>
+  <body>
+    <input type="text" id="element" />
+    <button onclick="getNumb()">Get Element</button>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>circular</title>
+    <script>
+      class Queue {
+        
+        constructor(size) {
+          this.max = size;
+          this.items = new Array(5);
+          this.currentSize = 0;
+          this.rear = -1;
+          this.front = -1;
+        }
+
+        enqueue(val) {
+          if (this.currentSize != this.max) {
+            if (this.rear == this.max - 1) {
+              this.rear = 0;
+            } else {
+              this.rear++;
+            }
+            this.items[this.rear] = val;
+            this.currentSize++;
+            if (this.front == -1) {
+              this.front = this.rear;
+            }
+          }
+        }
+        dequeue() {
+          if (this.currentSize != 0) {
+            this.items[this.front] = null;
+
+            if (this.front == this.max - 1) {
+              this.front = 0;
+            } else {
+              this.front++;
+            }
+
+            this.currentSize++;
+          } else {
+            this.currentSize = -1;
+            this.rear = -1;
+            alert("queue is empty");
+          }
+        }
+      }
+
+      let queue = new Queue(5);
+      queue.enqueue(345);
+      queue.enqueue(24115);
+      queue.enqueue(4534);
+      queue.enqueue(6434);
+      queue.enqueue(45);
+      
+      queue.dequeue();
+      queue.dequeue();
+      queue.dequeue();
+      
+      queue.enqueue(100);
+
+      console.log(queue);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+    <script>
+
+        class List {
+            // head is a node in which value and next are placed
+            constructor(data) {
+                this.head = {
+                    value: data,
+                    next: null
+                }
+                this.tail = this.head;
+                this.size = 1;
+            }
+
+            // a next function/another list add to linked list
+            // add a node at last
+
+            appendNode(nodeData) {
+                let newNode = {
+                    value: nodeData,
+                    next: null
+                }
+                this.tail.next = newNode;
+                this.tail = newNode;
+                this.size += 1
+            }
+
+            traversing() {
+                let counter = 0;
+                let currentNode = this.head;
+                while (counter < this.size) {
+                    console.log(currentNode)
+                    currentNode = currentNode.next;
+                    counter++
+                }
+            }
+
+            // delete node 
+            deleteNode(index) {
+                let counter = 1;
+                let lead = this.head;
+                if (index === 1) {
+                    this.head = this.head.next;
+                }
+                else {
+                    while (counter < index - 1) {
+                        lead = lead.next;
+                        counter++
+                    }
+                    let nextNode = lead.next.next;
+                    lead.next = nextNode;
+                }
+                console.log(lead)
+            }
+
+            //   insert a node at any position
+            insertNode(index, value) {
+                let counter = 1;
+                let currentNode = this.head;
+
+                while (counter < index - 1) {
+                    // console.log(counter);
+                    counter++;
+                    currentNode = currentNode.next
+                }
+                let nextNode = currentNode.next
+                currentNode.next = {
+                    value: value,
+                    next: nextNode
+                }
+            }
+
+
+
+            searchNodeByValue(data) {
+                let result = undefined;
+                let lead = this.head;
+                let loop = true;
+                while (loop) {
+                    loop = !!lead;
+                    if (loop && lead.value === data) {
+                        loop = false
+                        result = lead;
+                    }
+                    lead = lead.next;
+
+                }
+                console.log(result)
+            }
+
+
+            searchNodeByIndex(index) {
+                let result = undefined;
+                let counter = 1;
+                let lead = this.head;
+                if (index === 1) {
+                    result = lead;
+                }
+                else {
+                    while (counter < index) {
+                        counter++
+                        if (counter === index - 1) {
+                            result = lead.next
+                        }
+                        lead = lead.next
+                    }
+                }
+                console.log(lead)
+
+            }
+
+
+        }
+
+        let list = new List(300);
+        list.appendNode(400)
+        list.appendNode(500)
+        list.appendNode(600)
+        list.appendNode(700)
+        // list.traversing();
+        // list.deleteNode(4);
+        // list.deleteNode(2);
+        // list.insertNode(3, 4000);
+        // list.searchNodeByValue(500);
+        // list.searchNodeByValue(1500); //write code for error  when there is no data lied;
+        // list.searchNodeByIndex(3);
+        // list.searchNodeByIndex(1);
+        // list.searchNode(300);
+        // console.warn(list);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

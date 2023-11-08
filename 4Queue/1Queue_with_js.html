@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queue</title>
+    <script>
+        //queue work on fifo approach 
+        
+      let queue = [];
+      let currentSize = queue.length;
+      let maxSize = 5;
+
+      function enqueue(newVal) {
+        if (currentSize >= maxSize) {
+          alert("queue is already full");
+        } else {
+          queue[currentSize] = newVal;
+          currentSize++;
+        }
+      }
+
+      function dequeue() {
+        if (currentSize > 0) {
+          for (let i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+          }
+          currentSize -= 1;
+          queue.length = currentSize;
+        } else {
+          alert("queue is empty");
+        }
+      }
+
+      function display() {
+        console.warn(queue);
+      }
+
+      enqueue(10);
+      enqueue(20);
+      enqueue(30);
+      enqueue(30);
+      enqueue(30);
+      dequeue();
+      display();
+    </script>
+  </head>
+  <body></body>
+</html>
